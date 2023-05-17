@@ -1,0 +1,73 @@
+
+main:	file format mach-o arm64
+
+Disassembly of section __TEXT,__text:
+
+0000000100003f4c <aTest::func1()>:
+100003f4c: ff 83 00 d1 	sub	sp, sp, #32
+100003f50: fd 7b 01 a9 	stp	x29, x30, [sp, #16]
+100003f54: fd 43 00 91 	add	x29, sp, #16
+100003f58: e0 07 00 f9 	str	x0, [sp, #8]
+100003f5c: 00 00 00 90 	adrp	x0, 0x100003000 <aTest::func1()+0x10>
+100003f60: 00 c0 3e 91 	add	x0, x0, #4016
+100003f64: 10 00 00 94 	bl	0x100003fa4 <_printf+0x100003fa4>
+100003f68: fd 7b 41 a9 	ldp	x29, x30, [sp, #16]
+100003f6c: ff 83 00 91 	add	sp, sp, #32
+100003f70: c0 03 5f d6 	ret
+
+0000000100003f74 <_main>:
+100003f74: ff 83 00 d1 	sub	sp, sp, #32
+100003f78: fd 7b 01 a9 	stp	x29, x30, [sp, #16]
+100003f7c: fd 43 00 91 	add	x29, sp, #16
+100003f80: 08 00 80 52 	mov	w8, #0
+100003f84: e8 07 00 b9 	str	w8, [sp, #4]
+100003f88: bf c3 1f b8 	stur	wzr, [x29, #-4]
+100003f8c: a0 17 00 d1 	sub	x0, x29, #5
+100003f90: ef ff ff 97 	bl	0x100003f4c <aTest::func1()>
+100003f94: e0 07 40 b9 	ldr	w0, [sp, #4]
+100003f98: fd 7b 41 a9 	ldp	x29, x30, [sp, #16]
+100003f9c: ff 83 00 91 	add	sp, sp, #32
+100003fa0: c0 03 5f d6 	ret
+
+Disassembly of section __TEXT,__stubs:
+
+0000000100003fa4 <__stubs>:
+100003fa4: 10 00 00 b0 	adrp	x16, 0x100004000 <__stubs+0x4>
+100003fa8: 10 02 40 f9 	ldr	x16, [x16]
+100003fac: 00 02 1f d6 	br	x16
+
+Disassembly of section __TEXT,__cstring:
+
+0000000100003fb0 <__cstring>:
+100003fb0: 66 75 6e 63 	<unknown>
+100003fb4: 31          	<unknown>
+100003fb5: 0a          	<unknown>
+100003fb6: 00          	<unknown>
+
+Disassembly of section __TEXT,__unwind_info:
+
+0000000100003fb8 <__unwind_info>:
+100003fb8: 01 00 00 00 	udf	#1
+100003fbc: 1c 00 00 00 	udf	#28
+100003fc0: 00 00 00 00 	udf	#0
+100003fc4: 1c 00 00 00 	udf	#28
+100003fc8: 00 00 00 00 	udf	#0
+100003fcc: 1c 00 00 00 	udf	#28
+100003fd0: 02 00 00 00 	udf	#2
+100003fd4: 4c 3f 00 00 	udf	#16204
+100003fd8: 34 00 00 00 	udf	#52
+100003fdc: 34 00 00 00 	udf	#52
+100003fe0: a5 3f 00 00 	udf	#16293
+100003fe4: 00 00 00 00 	udf	#0
+100003fe8: 34 00 00 00 	udf	#52
+100003fec: 03 00 00 00 	udf	#3
+100003ff0: 0c 00 01 00 	<unknown>
+100003ff4: 10 00 01 00 	<unknown>
+100003ff8: 00 00 00 00 	udf	#0
+100003ffc: 00 00 00 04 	<unknown>
+
+Disassembly of section __DATA_CONST,__got:
+
+0000000100004000 <__got>:
+100004000: 00 00 00 00 	udf	#0
+100004004: 00 00 00 80 	<unknown>

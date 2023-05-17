@@ -1,0 +1,19 @@
+# 测试一下gcc的分步编译
+
+compile:c
+	g++ test.o -o test
+
+c:S
+	g++ -c test.s -o test.o
+
+S:E
+	g++ -S test.i -o test.s
+
+E:test.cpp
+	g++ -E test.cpp -o test.i
+
+run:clean compile
+	./test
+
+clean:
+	rm -f test.i test.s test.o test
