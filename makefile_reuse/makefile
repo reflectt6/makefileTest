@@ -1,5 +1,5 @@
 TARGET=c
-
+LDLIBS:=-lstdc++
 include ../makefile_reuse3/makefile
 #OBJ=$(patsubst %.cpp, %.o, $(wildcard ./*.cpp ./*.c))
 #OBJ:=$(patsubst %.c, %.o, $(OBJ))

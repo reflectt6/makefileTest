@@ -3,8 +3,12 @@ OBJ:=$(patsubst %.c, %.o, $(OBJ))
 
 .PHONY:clean
 
+ifndef LDLIBS
+LDLIBS:=
+endif
+
 $(TARGET):$(OBJ)
-	$(CXX) $^ -o $@
+	gcc $(LDLIBS) $^ -o $@
 
 # 可以省略，因为存在自动推导机制
 #%.o:%.cpp

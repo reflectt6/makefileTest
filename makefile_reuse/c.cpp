@@ -1,8 +1,14 @@
 extern void func1();
+
 extern void func2();
 
-int main(){
+#include <iostream>
+
+using namespace std;
+
+int main() {
     func1();
     func2();
+    cout << "std" << endl;
     return 0;
 }
