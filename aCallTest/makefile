@@ -6,4 +6,4 @@ decompilation:main
 	objdump -DC $^ > $^.txt
 
 clean:
-	$(RM) -f main
+	$(RM) main
